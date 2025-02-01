@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Whisper Extractor with Interface",
+  "version": "1.0",
+  "description": "Перехватывает ответы API и выводит поле whisper. Позволяет управлять функциональностью на уровне вкладки (через интерфейс) и глобально (через popup).",
+  "permissions": [
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.pathofexile.com/trade2/search/poe2/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["injected.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
