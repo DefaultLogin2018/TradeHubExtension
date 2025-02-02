@@ -2,9 +2,11 @@
   "manifest_version": 3,
   "name": "Whisper Extractor with Interface",
   "version": "1.0",
-  "description": "Перехватывает ответы API и выводит поле whisper. Позволяет управлять функциональностью на уровне вкладки (через интерфейс) и глобально (через popup).",
+  "description": "Перехватывает ответы API и выводит поле whisper. Управление осуществляется через выдвигающееся меню на странице и через вкладку Hub.",
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "storage",
+    "alarms"
   ],
   "content_scripts": [
     {
@@ -22,11 +24,12 @@
   ],
   "web_accessible_resources": [
     {
-      "resources": ["injected.js"],
+      "resources": ["injected.js", "sound.mp3"],
+      "matches": ["<all_urls>"]
+    },
+    {
+      "resources": ["hub.html", "hub.js"],
       "matches": ["<all_urls>"]
     }
-  ],
-  "action": {
-    "default_popup": "popup.html"
-  }
+  ]
 }

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Whisper Hub</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #0f0f0f;
+            margin: 0;
+            color: #fff;
+        }
+        h1 {
+            position: fixed;
+            font-size: 1.5em;
+            left: 50px;
+            top: -10px;
+            background: #0f0f0f;
+            color: #a38d6d;
+            border: 1px solid rgb(254, 32, 32);
+            border-radius: 5px; padding: 5px 10px;
+            display: block;
+        }
+        #logs, #items {
+            margin-top: 20px;
+            max-height: 100vh;
+            overflow-y: auto;
+            background: saddlebrown;
+            padding: 1px;
+            border-radius: 1px;
+            color: #000;
+        }
+        .item-wrapper {
+            background: #212121;
+            display: grid;
+            grid-template-columns: 1fr auto auto;
+            align-items: start;
+            gap: 10px;
+            border-bottom: 1px solid #ddd;
+            padding: 5px 0;
+        }
+        .item-content {
+        }
+        .middle {
+        }
+        .pageWrapper {
+            background: #0f0f0f;
+        }
+        .item-whisper {
+            background: #e0e0e0;
+            border-radius: 4px;
+            white-space: pre-wrap;
+            max-width: 200px;
+            padding: 5px;
+        }
+        .copy-button {
+            background: #a38d6d;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            padding: 5px 10px;
+            font-size: 0.9em;
+        }
+        .log-entry, .item-entry {
+        }
+        .log-entry:last-child, .item-entry:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<div id="pageWrapper">
+<body>
+<h1>Whisper Hub</h1>
+<div id="items">
+</div>
+<script src="hub.js"></script>
+</body>
+</div>
+</html>
